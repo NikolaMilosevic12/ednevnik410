@@ -138,5 +138,10 @@ namespace Ednevnik410b
                 MessageBox.Show(greska.GetType().ToString());
             }
         }
+
+        private void Osobe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

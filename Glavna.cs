@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ednevnik410b;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,53 @@ namespace Ednevnik410b
             Upisnica forma = new Upisnica();
             forma.Show();
             this.Hide();
+        }
+
+        private void odeljenjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifarnik forma = new sifarnik("Odeljenje");
+            forma.Show();
+            this.Hide();
+        }
+
+        private void sMerrToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifarnik forma = new sifarnik("Smer");
+            forma.Show();
+            this.Hide();
+        }
+
+        private void ocenaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifarnik forma = new sifarnik("Ocena");
+            forma.Show();
+            this.Hide();
+        }
+
+        private void predmetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifarnik forma = new sifarnik("Predmet");
+            forma.Show();
+            this.Hide();
+        }
+
+        private void raspodelaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifarnik forma = new sifarnik("Raspodela");
+            forma.Show();
+            this.Hide();
+        }
+
+        private void skolskagodinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifarnik forma = new sifarnik("Skolska_godina");
+            forma.Show();
+            this.Hide();
+        }
+
+        private void Glavna_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

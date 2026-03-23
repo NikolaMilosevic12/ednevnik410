@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class2.cs" />
+    <Compile Include="konekcijaclass.cs" />
+    <Compile Include="sifarnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sifarnik.Designer.cs">
+      <DependentUpon>sifarnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Upisnica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,9 +98,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="sifarnik.resx">
+      <DependentUpon>sifarnik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Upisnica.resx">
       <DependentUpon>Upisnica.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".gitignore" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

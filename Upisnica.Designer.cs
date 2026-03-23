@@ -68,6 +68,7 @@ namespace Ednevnik410b
             this.Controls.Add(this.comboBox1);
             this.Name = "Upisnica";
             this.Text = "Upisnica";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Upisnica_FormClosed);
             this.ResumeLayout(false);
 
         }

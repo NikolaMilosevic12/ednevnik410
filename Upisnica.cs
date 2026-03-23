@@ -16,5 +16,10 @@ namespace Ednevnik410b
         {
             InitializeComponent();
         }
+
+        private void Upisnica_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
