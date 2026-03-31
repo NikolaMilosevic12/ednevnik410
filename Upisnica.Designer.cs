@@ -1,4 +1,4 @@
-﻿namespace SAednevnik
+﻿namespace Ednevnik410b
 {
     partial class Upisnica
     {
@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGridView = new System.Windows.Forms.DataGridView();
+            this.datagrid = new System.Windows.Forms.DataGridView();
             this.TxtId = new System.Windows.Forms.Label();
             this.TxtGodina = new System.Windows.Forms.Label();
             this.TxtOdeljenje = new System.Windows.Forms.Label();
             this.TxtUcenik = new System.Windows.Forms.Label();
-            this.TboxId = new System.Windows.Forms.TextBox();
-            this.CboxGod = new System.Windows.Forms.ComboBox();
-            this.CboxOdeljenje = new System.Windows.Forms.ComboBox();
-            this.CboxUcenik = new System.Windows.Forms.ComboBox();
-            this.BtnDelete = new System.Windows.Forms.Button();
-            this.BtnUpdate = new System.Windows.Forms.Button();
-            this.BtnInsert = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DGridView)).BeginInit();
+            this.id = new System.Windows.Forms.TextBox();
+            this.godina = new System.Windows.Forms.ComboBox();
+            this.odeljenje = new System.Windows.Forms.ComboBox();
+            this.ucenik = new System.Windows.Forms.ComboBox();
+            this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // DGridView
+            // datagrid
             // 
-            this.DGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGridView.Location = new System.Drawing.Point(39, 158);
-            this.DGridView.Name = "DGridView";
-            this.DGridView.Size = new System.Drawing.Size(719, 263);
-            this.DGridView.TabIndex = 0;
-            this.DGridView.CurrentCellChanged += new System.EventHandler(this.DGridView_CurrentCellChanged);
+            this.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid.Location = new System.Drawing.Point(13, 104);
+            this.datagrid.Name = "datagrid";
+            this.datagrid.Size = new System.Drawing.Size(551, 263);
+            this.datagrid.TabIndex = 0;
+            this.datagrid.CurrentCellChanged += new System.EventHandler(this.DGridView_CurrentCellChanged);
             // 
             // TxtId
             // 
@@ -66,7 +66,7 @@
             // 
             this.TxtGodina.AutoSize = true;
             this.TxtGodina.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGodina.Location = new System.Drawing.Point(215, 9);
+            this.TxtGodina.Location = new System.Drawing.Point(137, 9);
             this.TxtGodina.Name = "TxtGodina";
             this.TxtGodina.Size = new System.Drawing.Size(71, 24);
             this.TxtGodina.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             this.TxtOdeljenje.AutoSize = true;
             this.TxtOdeljenje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtOdeljenje.Location = new System.Drawing.Point(423, 9);
+            this.TxtOdeljenje.Location = new System.Drawing.Point(268, 9);
             this.TxtOdeljenje.Name = "TxtOdeljenje";
             this.TxtOdeljenje.Size = new System.Drawing.Size(92, 24);
             this.TxtOdeljenje.TabIndex = 3;
@@ -86,104 +86,105 @@
             // 
             this.TxtUcenik.AutoSize = true;
             this.TxtUcenik.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUcenik.Location = new System.Drawing.Point(631, 9);
+            this.TxtUcenik.Location = new System.Drawing.Point(398, 9);
             this.TxtUcenik.Name = "TxtUcenik";
             this.TxtUcenik.Size = new System.Drawing.Size(68, 24);
             this.TxtUcenik.TabIndex = 4;
             this.TxtUcenik.Text = "Ucenik";
             // 
-            // TboxId
+            // id
             // 
-            this.TboxId.Location = new System.Drawing.Point(39, 66);
-            this.TboxId.Name = "TboxId";
-            this.TboxId.ReadOnly = true;
-            this.TboxId.Size = new System.Drawing.Size(92, 20);
-            this.TboxId.TabIndex = 5;
+            this.id.Location = new System.Drawing.Point(39, 36);
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Size = new System.Drawing.Size(92, 20);
+            this.id.TabIndex = 5;
             // 
-            // CboxGod
+            // godina
             // 
-            this.CboxGod.FormattingEnabled = true;
-            this.CboxGod.Location = new System.Drawing.Point(219, 66);
-            this.CboxGod.Name = "CboxGod";
-            this.CboxGod.Size = new System.Drawing.Size(120, 21);
-            this.CboxGod.TabIndex = 6;
+            this.godina.FormattingEnabled = true;
+            this.godina.Location = new System.Drawing.Point(141, 36);
+            this.godina.Name = "godina";
+            this.godina.Size = new System.Drawing.Size(120, 21);
+            this.godina.TabIndex = 6;
             // 
-            // CboxOdeljenje
+            // odeljenje
             // 
-            this.CboxOdeljenje.FormattingEnabled = true;
-            this.CboxOdeljenje.Location = new System.Drawing.Point(427, 65);
-            this.CboxOdeljenje.Name = "CboxOdeljenje";
-            this.CboxOdeljenje.Size = new System.Drawing.Size(120, 21);
-            this.CboxOdeljenje.TabIndex = 7;
+            this.odeljenje.FormattingEnabled = true;
+            this.odeljenje.Location = new System.Drawing.Point(272, 36);
+            this.odeljenje.Name = "odeljenje";
+            this.odeljenje.Size = new System.Drawing.Size(120, 21);
+            this.odeljenje.TabIndex = 7;
             // 
-            // CboxUcenik
+            // ucenik
             // 
-            this.CboxUcenik.FormattingEnabled = true;
-            this.CboxUcenik.Location = new System.Drawing.Point(635, 66);
-            this.CboxUcenik.Name = "CboxUcenik";
-            this.CboxUcenik.Size = new System.Drawing.Size(123, 21);
-            this.CboxUcenik.TabIndex = 8;
+            this.ucenik.FormattingEnabled = true;
+            this.ucenik.Location = new System.Drawing.Point(402, 35);
+            this.ucenik.Name = "ucenik";
+            this.ucenik.Size = new System.Drawing.Size(123, 21);
+            this.ucenik.TabIndex = 8;
             // 
-            // BtnDelete
+            // delete
             // 
-            this.BtnDelete.BackColor = System.Drawing.Color.Red;
-            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnDelete.Location = new System.Drawing.Point(427, 108);
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(100, 35);
-            this.BtnDelete.TabIndex = 9;
-            this.BtnDelete.Text = "Obrisi";
-            this.BtnDelete.UseVisualStyleBackColor = false;
-            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.delete.BackColor = System.Drawing.SystemColors.Control;
+            this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.delete.Location = new System.Drawing.Point(356, 62);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(100, 35);
+            this.delete.TabIndex = 9;
+            this.delete.Text = "Obrisi";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // BtnUpdate
+            // update
             // 
-            this.BtnUpdate.BackColor = System.Drawing.Color.Yellow;
-            this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnUpdate.Location = new System.Drawing.Point(542, 108);
-            this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(100, 35);
-            this.BtnUpdate.TabIndex = 10;
-            this.BtnUpdate.Text = "Ažuriraj";
-            this.BtnUpdate.UseVisualStyleBackColor = false;
-            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            this.update.BackColor = System.Drawing.SystemColors.Control;
+            this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.update.Location = new System.Drawing.Point(250, 63);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(100, 35);
+            this.update.TabIndex = 10;
+            this.update.Text = "Ažuriraj";
+            this.update.UseVisualStyleBackColor = false;
+            this.update.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // BtnInsert
+            // add
             // 
-            this.BtnInsert.BackColor = System.Drawing.Color.LawnGreen;
-            this.BtnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInsert.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnInsert.Location = new System.Drawing.Point(657, 108);
-            this.BtnInsert.Name = "BtnInsert";
-            this.BtnInsert.Size = new System.Drawing.Size(100, 35);
-            this.BtnInsert.TabIndex = 11;
-            this.BtnInsert.Text = "Dodaj";
-            this.BtnInsert.UseVisualStyleBackColor = false;
-            this.BtnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
+            this.add.BackColor = System.Drawing.SystemColors.Control;
+            this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.add.Location = new System.Drawing.Point(141, 63);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(100, 35);
+            this.add.TabIndex = 11;
+            this.add.Text = "Dodaj";
+            this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // Upisnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnInsert);
-            this.Controls.Add(this.BtnUpdate);
-            this.Controls.Add(this.BtnDelete);
-            this.Controls.Add(this.CboxUcenik);
-            this.Controls.Add(this.CboxOdeljenje);
-            this.Controls.Add(this.CboxGod);
-            this.Controls.Add(this.TboxId);
+            this.ClientSize = new System.Drawing.Size(576, 374);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.ucenik);
+            this.Controls.Add(this.odeljenje);
+            this.Controls.Add(this.godina);
+            this.Controls.Add(this.id);
             this.Controls.Add(this.TxtUcenik);
             this.Controls.Add(this.TxtOdeljenje);
             this.Controls.Add(this.TxtGodina);
             this.Controls.Add(this.TxtId);
-            this.Controls.Add(this.DGridView);
+            this.Controls.Add(this.datagrid);
             this.Name = "Upisnica";
             this.Text = "Upisnica";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Upisnica_FormClosed);
             this.Load += new System.EventHandler(this.Upisnica_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,17 +192,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DGridView;
+        private System.Windows.Forms.DataGridView datagrid;
         private System.Windows.Forms.Label TxtId;
         private System.Windows.Forms.Label TxtGodina;
         private System.Windows.Forms.Label TxtOdeljenje;
         private System.Windows.Forms.Label TxtUcenik;
-        private System.Windows.Forms.TextBox TboxId;
-        private System.Windows.Forms.ComboBox CboxGod;
-        private System.Windows.Forms.ComboBox CboxOdeljenje;
-        private System.Windows.Forms.ComboBox CboxUcenik;
-        private System.Windows.Forms.Button BtnDelete;
-        private System.Windows.Forms.Button BtnUpdate;
-        private System.Windows.Forms.Button BtnInsert;
+        private System.Windows.Forms.TextBox id;
+        private System.Windows.Forms.ComboBox godina;
+        private System.Windows.Forms.ComboBox odeljenje;
+        private System.Windows.Forms.ComboBox ucenik;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button add;
     }
 }

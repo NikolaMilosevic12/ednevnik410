@@ -1,0 +1,9 @@
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.csproj.AssemblyReference.cache
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.Glavna.resources
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.Login.resources
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.Osobe.resources
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.Properties.Resources.resources
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\ednevnik410b.sifarnik.resources
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\SAednevnik.Upisnica.resources
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.csproj.GenerateResource.cache
+C:\Users\ucenik\Source\Repos\NikolaMilosevic12\ednevnik410\obj\Release\Ednevnik410b.csproj.CoreCompileInputs.cache

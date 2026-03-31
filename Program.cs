@@ -1,4 +1,4 @@
-﻿using System;
+﻿                                                      using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +16,7 @@ namespace Ednevnik410b
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Upisnica());
+            Application.Run(new Login());
         }
     }
 }

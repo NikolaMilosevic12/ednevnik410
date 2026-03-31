@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace SAednevnik
+namespace Ednevnik410b
 {
     public partial class Upisnica : Form
     {
@@ -26,9 +26,9 @@ namespace SAednevnik
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Skolska_godina", veza);
             DataTable godina = new DataTable();
             adapter.Fill(godina);
-            CboxGod.DataSource = godina;
-            CboxGod.ValueMember = "id";
-            CboxGod.DisplayMember = "naziv";
+            this.godina.DataSource = godina;
+            this.godina.ValueMember = "id";
+            this.godina.DisplayMember = "naziv";
         }
         private void PopulateCboxOdeljenje()
         {
@@ -36,9 +36,9 @@ namespace SAednevnik
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT id, razred, indeks, godina_id, str(razred)+'-'+indeks as naziv FROM Odeljenje", veza);
             DataTable Odeljenje = new DataTable();
             adapter.Fill(Odeljenje);
-            CboxOdeljenje.DataSource = Odeljenje;
-            CboxOdeljenje.ValueMember = "id";
-            CboxOdeljenje.DisplayMember = "naziv";
+            odeljenje.DataSource = Odeljenje;
+            odeljenje.ValueMember = "id";
+            odeljenje.DisplayMember = "naziv";
         }
         private void PopulateCboxUcenik()
         {
@@ -46,9 +46,9 @@ namespace SAednevnik
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT id, prezime+' '+ime as naziv FROM Osoba", veza);
             DataTable ucenik = new DataTable();
             adapter.Fill(ucenik);
-            CboxUcenik.DataSource = ucenik;
-            CboxUcenik.ValueMember = "id";
-            CboxUcenik.DisplayMember = "naziv";
+            this.ucenik.DataSource = ucenik;
+            this.ucenik.ValueMember = "id";
+            this.ucenik.DisplayMember = "naziv";
         }
         private void PopulateDGridView()
         {
@@ -57,11 +57,14 @@ namespace SAednevnik
             SqlDataAdapter adapter = new SqlDataAdapter(naredba, veza);
             DataTable tabela = new DataTable();
             adapter.Fill(tabela);
-            DGridView.DataSource = tabela;
-            DGridView.AllowUserToAddRows = false;
-            DGridView.Columns["god_id"].Visible = false;
-            DGridView.Columns["odel_id"].Visible = false;
-            DGridView.Columns["os_id"].Visible = false;
+            datagrid.DataSource = tabela;
+            datagrid.AllowUserToAddRows = false;
+            tabela.Columns["id"].ColumnName = "ID";
+            tabela.Columns["ucenik"].ColumnName = "Učenik";
+            tabela.Columns["odel"].ColumnName = "Odjeljenje";
+            datagrid.Columns["god_id"].Visible = false;
+            datagrid.Columns["odel_id"].Visible = false;
+            datagrid.Columns["os_id"].Visible = false;
         }
         private void PopulateCBoxes()
         {
@@ -77,19 +80,19 @@ namespace SAednevnik
 
         private void DGridView_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (DGridView.CurrentRow != null)
+            if (datagrid.CurrentRow != null)
             {
-                int brSloga = DGridView.CurrentRow.Index;
-                CboxGod.SelectedValue = DGridView.Rows[brSloga].Cells["god_id"].Value.ToString();
-                CboxOdeljenje.SelectedValue = DGridView.Rows[brSloga].Cells["odel_id"].Value.ToString();
-                CboxUcenik.SelectedValue = DGridView.Rows[brSloga].Cells["os_id"].Value.ToString();
-                TboxId.Text = DGridView.Rows[brSloga].Cells["id"].Value.ToString();
+                int brSloga = datagrid.CurrentRow.Index;
+                godina.SelectedValue = datagrid.Rows[brSloga].Cells["god_id"].Value.ToString();
+                odeljenje.SelectedValue = datagrid.Rows[brSloga].Cells["odel_id"].Value.ToString();
+                ucenik.SelectedValue = datagrid.Rows[brSloga].Cells["os_id"].Value.ToString();
+                id.Text = datagrid.Rows[brSloga].Cells["id"].Value.ToString();
             }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            string naredba = "DELETE FROM upisnica WHERE id=" + TboxId.Text;
+            string naredba = "DELETE FROM upisnica WHERE id=" + id.Text;
             SqlConnection veza = konekcija.povezi();
             SqlCommand komanda = new SqlCommand(naredba, veza);
             try
@@ -107,9 +110,9 @@ namespace SAednevnik
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            string naredba = "UPDATE upisnica SET osoba_id = " + CboxUcenik.SelectedValue.ToString();
-            naredba += ", odeljenje_id=" + CboxOdeljenje.SelectedValue.ToString();
-            naredba += " WHERE id=" + TboxId.Text;
+            string naredba = "UPDATE upisnica SET osoba_id = " + ucenik.SelectedValue.ToString();
+            naredba += ", odeljenje_id=" + odeljenje.SelectedValue.ToString();
+            naredba += " WHERE id=" + id.Text;
             SqlConnection veza = konekcija.povezi();
             SqlCommand komanda = new SqlCommand(naredba, veza);
             try
@@ -128,8 +131,8 @@ namespace SAednevnik
         private void BtnInsert_Click(object sender, EventArgs e)
         {
             string naredba = "INSERT INTO upisnica (odeljenje_id, osoba_id) VALUES(";
-            naredba += CboxOdeljenje.SelectedValue.ToString() + ", ";
-            naredba += CboxUcenik.SelectedValue.ToString() + ")";
+            naredba += odeljenje.SelectedValue.ToString() + ", ";
+            naredba += ucenik.SelectedValue.ToString() + ")";
             SqlConnection veza = konekcija.povezi();
             SqlCommand komanda = new SqlCommand(naredba, veza);
             try
@@ -144,6 +147,11 @@ namespace SAednevnik
             }
 
             PopulateDGridView();
+        }
+
+        private void Upisnica_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

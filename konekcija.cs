@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Ednevnik410b
 {
-    internal class konekcija
+    class konekcija
     {
         public static SqlConnection povezi()
         {
-            SqlConnection rezultat = new SqlConnection("Data Source=DESKTOP-6LPEK0P\\SQLEXPRESS;Initial catalog=dnevnik410b;Integrated security=true");
-            return rezultat;
+            string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+            return new SqlConnection(cs);
         }
     }
 }
